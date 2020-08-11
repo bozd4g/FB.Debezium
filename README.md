@@ -17,7 +17,7 @@ Create a connector in debezium for postgres and kafka.
 * Method: POST
 * Address: 127.0.0.1:8083/connectors
 
-* Note: If 127.0.0.1 doesn't work, try your static ip.
+* Note: If 127.0.0.1 doesn't work, try your static ip. Also change "table.whitelist" property for your table
  
 
 ```json
@@ -35,7 +35,7 @@ Create a connector in debezium for postgres and kafka.
     "database.server.name": "debezium",
     "database.whitelist": "public",
     "heartbeat.interval.ms": "1000",
-    "table.whitelist": "public.users", /* The related table */
+    "table.whitelist": "public.users",
     "database.history.kafka.bootstrap.servers": "127.0.0.1:9092",
     "key.converter": "org.apache.kafka.connect.json.JsonConverter",
     "key.converter.schemas.enable": "false",
